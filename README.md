@@ -11,7 +11,7 @@ python3 -m venv env
 ```
 
 ```
-source env/bin/activate
+source venv/bin/activate
 ```
 
 Установить зависимости из файла requirements.txt:
