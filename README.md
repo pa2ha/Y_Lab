@@ -5,7 +5,7 @@ cd Y_Lab
 ```
 # Как запустить Тесты!
 
-Cоздать файл .env и заполнить его
+Cоздать файл .env в корне проекта и заполнить его
 
 ```
 БД для API
@@ -18,11 +18,11 @@ DB_PASS=
 
 БД для тестов 
 
-DB_HOST_TEST
-DB_PORT_TEST
-DB_NAME_TEST
-DB_USER_TEST
-DB_PASS_TEST
+DB_HOST_TEST=
+DB_PORT_TEST=
+DB_NAME_TEST=
+DB_USER_TEST=
+DB_PASS_TEST=
 ```
 Находясь в корнейвой папке проекта выполнить:
 ```
