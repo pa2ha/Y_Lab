@@ -5,24 +5,31 @@ cd Y_Lab
 ```
 # Как запустить Тесты!
 
-Cоздать файл .env в корне проекта и заполнить его(можно продублировать)
-
+Cоздать файл .env в корне проекта и заполнить его
+## Если запускаем для тестов, то просто копируем
 ```
-БД для API
 
-POSTGRES_HOST=
-POSTGRES_PORT=
-POSTGRES_DB=
-POSTGRES_USER=
-POSTGRES_PASSWORD=
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
+POSTGRES_DB=menu
+POSTGRES_USER=fastapi
+POSTGRES_PASSWORD=mypass
 
-БД для тестов 
+DB_HOST_TEST=db
+DB_PORT_TEST=5432
+DB_NAME_TEST=menu
+DB_USER_TEST=fasapy
+DB_PASS_TEST=mypass
+```
+## Если запускаем API, то оставляем без тестов
+```
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
+POSTGRES_DB=menu
+POSTGRES_USER=fastapi
+POSTGRES_PASSWORD=mypass
+```
 
-DB_HOST_TEST=
-DB_PORT_TEST=
-DB_NAME_TEST=
-DB_USER_TEST=
-DB_PASS_TEST=
 ```
 Находясь в корнейвой папке проекта выполнить:
 ```
