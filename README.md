@@ -38,11 +38,15 @@ docker-compose up -для запуска контейнеров
 ### В другом терминале после поднятия контейнеров
 ```
 docker-compose exec api-test pytest - для запуска тестов
-docker-compose exec api-test pytest tests/script.py - для запуска сценария из тестов
-```
-### Пример сложного запроса(пункт 3)
-можно увидеть в routers/router_menu.py/get_menus()
 
+
+docker-compose exec api-test pytest tests/script.py - для запуска сценария из тестов
+
+
+### Пример сложного запроса(пункт 3)
+```
+можно увидеть в routers/router_menu.py/get_menus()
+```
 # Как запустить проект
 Cоздать и активировать виртуальное окружение:
 
