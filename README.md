@@ -4,6 +4,26 @@ git clone git@github.com:pa2ha/Y_Lab.git
 cd Y_Lab
 ```
 # Как запустить Тесты!
+
+Cоздать файл .env и заполнить его
+
+```
+БД для API
+
+DB_HOST=
+DB_PORT=
+DB_NAME=
+DB_USER=
+DB_PASS=
+
+БД для тестов 
+
+DB_HOST_TEST
+DB_PORT_TEST
+DB_NAME_TEST
+DB_USER_TEST
+DB_PASS_TEST
+```
 Находясь в корнейвой папке проекта выполнить:
 ```
 docker-compose up -для запуска контейнеров
@@ -37,15 +57,7 @@ python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Cоздать файл .env и заполнить его
 
-```
-DB_HOST=
-DB_PORT=
-DB_NAME=
-DB_USER=
-DB_PASS=
-```
 
 Запустить миграции
 ```
