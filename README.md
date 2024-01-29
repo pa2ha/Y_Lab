@@ -10,11 +10,11 @@ Cоздать файл .env в корне проекта и заполнить �
 ```
 БД для API
 
-DB_HOST=
-DB_PORT=
-DB_NAME=
-DB_USER=
-DB_PASS=
+POSTGRES_HOST=
+POSTGRES_PORT=
+POSTGRES_DB=
+POSTGRES_USER=
+POSTGRES_PASSWORD=
 
 БД для тестов 
 
