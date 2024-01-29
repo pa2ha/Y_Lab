@@ -27,7 +27,7 @@ async def add_dish(submenu_id: UUID, add_dish: DishCreate,
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
                             detail="Dish already exists")
     stmt = insert(dish).values(submenu_id=submenu_id,
-                               **add_dish.dict()).returning(dish)
+                               **add_dish.model_dump()).returning(dish)
     result = await session.execute(stmt)
     created_dish = result.fetchone()
     await session.commit()
@@ -88,7 +88,7 @@ async def update_dish(dish_id: UUID,
                       session: AsyncSession = Depends(get_async_session)):
     stmt = (update(dish)
             .where(dish.c.id == dish_id)
-            .values(**updated_dish.dict()))
+            .values(**updated_dish.model_dump()))
     await session.execute(stmt)
     result = await session.execute(select(dish).where(dish.c.id == dish_id))
     updated_dish_info = result.fetchone()

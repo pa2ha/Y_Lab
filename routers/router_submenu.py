@@ -29,7 +29,7 @@ async def add_submenu(menu_id: UUID, add_submenu: SubMenuCreate,
                             detail="Submenu already exists")
 
     stmt = (insert(submenu).
-            values(menu_id=menu_id, **add_submenu.dict()).returning(submenu))
+            values(menu_id=menu_id, **add_submenu.model_dump()).returning(submenu))
     result = await session.execute(stmt)
     created_submenu = result.fetchone()
     await session.commit()
@@ -93,7 +93,7 @@ async def update_submenu(submenu_id: UUID,
                          session: AsyncSession = Depends(get_async_session)):
     stmt = (update(submenu)
             .where(submenu.c.id == submenu_id)
-            .values(**updated_submenu.dict()))
+            .values(**updated_submenu.model_dump()))
     await session.execute(stmt)
     submenu_dict = {
         'id': str(submenu_id),

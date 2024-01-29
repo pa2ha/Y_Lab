@@ -20,7 +20,7 @@ router_menu = APIRouter(
                   status_code=status.HTTP_201_CREATED)
 async def add_menu(add_menu: MenuCreate,
                    session: AsyncSession = Depends(get_async_session)):
-    stmt = insert(menu).values(**add_menu.dict()).returning(menu)
+    stmt = insert(menu).values(**add_menu.model_dump()).returning(menu)
     result = await session.execute(stmt)
     added_menu = result.fetchone()
     await session.commit()
@@ -79,7 +79,7 @@ async def update_menu(menu_id: UUID, updated_menu: MenuCreate,
                       session: AsyncSession = Depends(get_async_session)):
     stmt = (update(menu)
             .where(menu.c.id == menu_id)
-            .values(**updated_menu.dict()))
+            .values(**updated_menu.model_dump()))
     await session.execute(stmt)
     menu_dict = {
         'id': str(menu_id),  # Преобразуем UUID в строку

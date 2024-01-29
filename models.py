@@ -21,7 +21,8 @@ submenu = Table(
     Column("id", UUID(as_uuid=True), primary_key=True, default=uuid.uuid4),
     Column("title", String, index=True),
     Column("description", String),
-    Column("menu_id", UUID(as_uuid=True), ForeignKey("menu.id", ondelete="CASCADE")),
+    Column("menu_id", UUID(as_uuid=True),
+           ForeignKey("menu.id", ondelete="CASCADE")),
 )
 
 # Определение таблицы dish
@@ -32,5 +33,6 @@ dish = Table(
     Column("title", String, index=True),
     Column("description", String),
     Column("price", Numeric(precision=10, scale=2)),
-    Column("submenu_id", UUID(as_uuid=True), ForeignKey("submenu.id", ondelete="CASCADE")),
+    Column("submenu_id", UUID(as_uuid=True),
+           ForeignKey("submenu.id", ondelete="CASCADE")),
 )

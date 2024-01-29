@@ -2,12 +2,12 @@ from typing import AsyncGenerator
 
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.ext.declarative import DeclarativeMeta, declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import declarative_base, sessionmaker
 
-from config import DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER
+from config import DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USER
 
 DATABASE_URL = (
-    f"postgresql+asyncpg://{DB_USER}:{DB_PASS}@"
+    f"postgresql+asyncpg://{DB_USER}:{DB_PASSWORD}@"
     f"{DB_HOST}:{DB_PORT}/{DB_NAME}"
 )
 Base: DeclarativeMeta = declarative_base()
