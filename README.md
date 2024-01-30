@@ -18,7 +18,7 @@ POSTGRES_PASSWORD=mypass
 DB_HOST_TEST=db
 DB_PORT_TEST=5432
 DB_NAME_TEST=menu
-DB_USER_TEST=fasapy
+DB_USER_TEST=fastapi
 DB_PASS_TEST=mypass
 ```
 ## Если запускаем API, то оставляем без тестов
@@ -30,18 +30,27 @@ POSTGRES_USER=fastapi
 POSTGRES_PASSWORD=mypass
 ```
 
-```
+
 Находясь в корнейвой папке проекта выполнить:
+
+
+для запуска контейнеров
 ```
-docker-compose up -для запуска контейнеров
+docker-compose up
 ```
 ### В другом терминале после поднятия контейнеров
+
+
+
+для запуска тестов
 ```
-docker-compose exec api-test pytest - для запуска тестов
+docker-compose exec api-test pytest
 
-
-docker-compose exec api-test pytest tests/script.py - для запуска сценария из тестов
-
+```
+для запуска сценария из тестов
+```
+docker-compose exec api-test pytest tests/script.py 
+```
 
 ### Пример сложного запроса(пункт 3)
 ```
