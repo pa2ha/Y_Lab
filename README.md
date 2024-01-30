@@ -20,7 +20,8 @@ DB_NAME_TEST=menu
 DB_USER_TEST=fastapi
 DB_PASS_TEST=mypass
 ```
-## Если запускаем API, то оставляем без тестов
+## Если запускаем не для тестирования, то оставляем .env без тестов 
+
 ```
 POSTGRES_HOST=db
 POSTGRES_PORT=5432
@@ -28,7 +29,13 @@ POSTGRES_DB=menu
 POSTGRES_USER=fastapi
 POSTGRES_PASSWORD=mypass
 ```
-
+и в докерфайле
+меняем
+```
+CMD ["tail", "-f", "/dev/null"]
+на
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+```
 
 Находясь в корнейвой папке проекта выполнить:
 
