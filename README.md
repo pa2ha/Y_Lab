@@ -8,7 +8,6 @@ cd Y_Lab
 Cоздать файл .env в корне проекта и заполнить его
 ## Если запускаем для тестов, то просто копируем
 ```
-
 POSTGRES_HOST=db
 POSTGRES_PORT=5432
 POSTGRES_DB=menu
